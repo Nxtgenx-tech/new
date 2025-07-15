@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gha-sample-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gha-sample
+  template:
+    metadata:
+      labels:
+        app: gha-sample
+    spec:
+      containers:
+        - name: gha-sample
+          image: YOUR_REGISTRY/gha-sample-app:latest
+          ports:
+            - containerPort: 3000

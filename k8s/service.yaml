@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gha-sample-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: gha-sample
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
